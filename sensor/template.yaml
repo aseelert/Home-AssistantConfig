@@ -1,9 +1,4 @@
-
-  - platform: time_date
-    display_options:
-      - 'date_time'
-      - 'time_date'
-      - 'beat'
+      
   - platform: template
     sensors:
       technik_temp:
