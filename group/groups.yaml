@@ -1,5 +1,4 @@
-
-- default_view:
+default_view:
    view: yes
    icon: mdi:home
    entities:
@@ -9,7 +8,7 @@
       - group.meine_cover
       - group.scene
       
-- scene:
+scene:
     view: no
     name: Scene
     entities:
@@ -17,9 +16,7 @@
       - scene.baden_beendet
       - scene.schlafen_gehen
 
-#      - group.pi_status
-
-- pi_status:
+pi_status:
     view: yes 
     name: RaspberryPi Status
     entities:
@@ -33,25 +30,16 @@
       - sensor.speedtest_upload
 
 
-- smoke_alarm:
-    view: no 
-    name: Rauchmelder
-    entities:
-      - sensor.entryway_nest_protect_color_status
-      - sensor.kitchen_nest_protect_color_status
-      - sensor.living_room_nest_protect_color_status
-      - sensor.kids_room_nest_protect_color_status
-      - sensor.den_nest_protect_color_status
-      - sensor.upstairs_nest_protect_color_status
 
-- home_devices:
+
+home_devices:
     view: no
     name: Check Devices
     entities:
       - device_tracker.gerty
       - device_tracker.ianja
 
-- Graphs:
+Graphs:
     view: yes
     name: Graphs
     entities:
@@ -60,94 +48,7 @@
       - history_graph.temperature
       - history_graph.humidtiy
 
-- Groundfloor:
-    view: yes
-    name: Groundfloor
-    entities:
-      - timer.kitchen
-      - sensor.zw_kuechenschrank_energy
-      - sensor.zw_kuechenschrank_power
-      - switch.zw_kuechenschrank_switch
-      - sensor.zw_cyrus1_energy
-      - sensor.zw_cyrus1_power
-      - switch.zw_cyrus1_switch
-      - sensor.kitchen_nest_protect_battery_health
-      - sensor.kitchen_nest_protect_smoke_status
-      - sensor.kitchen_nest_protect_co_status
-      - sensor.kitchen_nest_protect_color_status
-      - sensor.technik_power
-      - sensor.technik_total_power
-      - switch.fritzdect_200_1
-      - sensor.netatmo_station_co2
-      - sensor.netatmo_station_humidity
-      - sensor.netatmo_station_noise
-      - sensor.netatmo_station_pressure
-      - sensor.netatmo_station_temperature
-      - sensor.netatmo_station_wifi
-      - sensor.entryway_nest_protect_smoke_status
-      - sensor.entryway_nest_protect_battery_health
-      - sensor.entryway_nest_protect_co_status
-      - sensor.entryway_nest_protect_color_status
-      - binary_sensor.garage_camera_motion_detected
-      - binary_sensor.garage_camera_online
-      - binary_sensor.garage_camera_person_detected
-      - binary_sensor.garage_camera_sound_detected
-      - group.Nest_Cams
-      - binary_sensor.eingangstuer_alex
-      - binary_sensor.kuechentuer_alex
-      - cover.zw_garagentor_switch
-
-- firstfloor:
-    view: yes
-    name: First floor
-    entities:
-      - light.wohnzimmerlampe
-      - sensor.living_room_nest_protect_battery_health
-      - sensor.living_room_nest_protect_co_status
-      - sensor.living_room_nest_protect_smoke_status
-      - device_tracker.samsung
-      - switch.zw_lichterkette_switch
-      - sensor.kids_room_nest_protect_battery_health
-      - sensor.kids_room_nest_protect_smoke_status
-      - sensor.kids_room_nest_protect_co_status
-      - sensor.kids_room_nest_protect_color_status 
-      - sensor.den_nest_protect_battery_health
-      - sensor.den_nest_protect_smoke_status
-      - sensor.den_nest_protect_co_status
-      - sensor.den_nest_protect_color_status
-      - switch.brennenstuhl2
-      - switch.brennenstuhl3
-      - cover.rollo5
-
-- upstairs:
-    view: yes
-    name: Upstairs
-    entities:
-      - sensor.upstairs_nest_protect_battery_health
-      - sensor.upstairs_nest_protect_smoke_status
-      - sensor.upstairs_nest_protect_co_status
-      - sensor.upstairs_nest_protect_color_status
-      - switch.zw_bibliothek_switch
-      - sensor.zw_badfenster_sensor
-      - sensor.zw_badfenster_access_control
-      - sensor.zw_badfenster_alarm_level
-      - sensor.zw_badfenster_alarm_type
-      - sensor.zw_badfenster_burglar
-      - sensor.zw_badfenster_heat
-      - sensor.zw_badfenster_power_management
-      - sensor.zw_badfenster_sourcenodeid
-      - sensor.zw_badfenster_temperature
-      - zwave.zw_badfenster
-      - binary_sensor.motion
-      - binary_sensor.tampering
-      - binary_sensor.badfenster_alex
-      - switch.brennenstuhl1
-      - cover.rollo1
-      - cover.rollo2
-      - cover.rollo3
-      - cover.rollo4
-
-- status:
+status:
     view: yes
     name: Status
     entities:
@@ -160,7 +61,7 @@
 
 ######################## End View ##### Start Grouping #######
 
-- meine_cover:
+meine_cover:
     view: no
     name: Rollos
     icon: mdi:cover
@@ -171,68 +72,9 @@
       - cover.rollo4_blinds
       - cover.rollo5_blinds
 
-- mobile_devices:
-    name: Status Mobile Devices
-    view: no
-    icon: mdi:home
-    entities:
-      - device_tracker.gerty
-      - sensor.gerty_battery_level
-      - sensor.gerty_battery_state
-      - device_tracker.anja_arbeit_phone
-      - device_tracker.ianja
-      - sensor.ianja_battery_level
-      - sensor.ianja_battery_state
-      - device_tracker.oldiphone
-      - device_tracker.iphonevonhofsee
-      - device_tracker.iphonevonhofsee_2
-      - device_tracker.iphonevonkirsten
-      - device_tracker.ipadleonard
 
 
-- hardware_devices:
-    name: Devices
-    view: no
-    icon: mdi:home
-    entities:
-      - sensor.entertain
-      - device_tracker.leonard
-      - device_tracker.dlan3arbeitszimmer
-      - device_tracker.dlan1technik
-      - device_tracker.meteroit
-      - device_tracker.homebot
-      - sensor.fritz_netmonitor
-      - device_tracker.skynet
-      - device_tracker.fritzoben
-      - device_tracker.fritzmitte
-      - device_tracker.synology
-      - device_tracker.trockner
-      - device_tracker.raspberrypiwifi
-      - device_tracker.raspberrypilan
-      - device_tracker.sonytv
-      - device_tracker.samsung
-      - device_tracker.entertain
-      - device_tracker.vuduo2
-      - device_tracker.vuduo2_2
-      - device_tracker.firetv
-      - device_tracker.ibm820r9gp1x5
-      - device_tracker.alexandersmbp2
-      - device_tracker.alexandrsimac27
-      - device_tracker.anjasmbp
-      - device_tracker.envialaptop
-      - device_tracker.ihpprint
-      - device_tracker.nestcamflur
-      - device_tracker.nestcamgarage
-      - device_tracker.nestcamgarten
-      - device_tracker.nestprotectarbeitszimmer
-      - device_tracker.nestprotectkamin
-      - device_tracker.nestprotectkinderzimmer
-      - device_tracker.nestprotectkueche
-      - device_tracker.nestprotecttechnik
-      - device_tracker.nestprotectwohnzimmer
-      - device_tracker.netatmopersonalweatherstation
-
-- Energy:
+Energy:
     name: House Energy Informations
     view: no
     entities:
@@ -255,7 +97,7 @@
 
 
 
-- wellbeing:
+wellbeing:
     name: well-being
     view: no
     entities:
@@ -270,7 +112,7 @@
       - sensor.zw_eingang_temperature
       - sensor.zw_kueche_temperature
 
-- Haus_Status:
+Haus_Status:
     name: Home State
     control: hidden
     view: no
@@ -293,7 +135,7 @@
       - binary_sensor.backyard_camera_person_detected
 
 
-- Functional_Switches:
+Functional_Switches:
     name: Switches
     control: hidden
     view: no
@@ -309,79 +151,14 @@
       - script.homeassistant_service
 
 
-- Protection_Status_Smoke:
-    name: Smoke Alarm
-    view: no
-    entities:
-      - sensor.upstairs_nest_protect_smoke_status
-      - sensor.kids_room_nest_protect_smoke_status
-      - sensor.kitchen_nest_protect_smoke_status
-      - sensor.living_room_nest_protect_smoke_status
-      - sensor.den_nest_protect_smoke_status
-      - sensor.entryway_nest_protect_smoke_status
-
-- Protection_Status_Co2:
-    name: Air Quality / Smoke Co2
-    view: no
-    entities:
-      - sensor.upstairs_nest_protect_co_status
-      - sensor.kids_room_nest_protect_co_status
-      - sensor.kitchen_nest_protect_co_status
-      - sensor.living_room_nest_protect_co_status
-      - sensor.den_nest_protect_co_status
-      - sensor.entryway_nest_protect_co_status
-
-#Protection_Status_Motion:
-#    name: Status and Motion
-#    view: no
-#    entities:
-#
-#      - binary_sensor.backyard_camera__garteneigenbereich_activity
-#      - binary_sensor.backyard_camera_motion_detected
-#      - binary_sensor.backyard_camera_online
-#      - binary_sensor.backyard_camera_person_detected
-#      - binary_sensor.backyard_camera_sound_detected
-#      - binary_sensor.den_nest_protect_online
-#      - binary_sensor.entryway_camera__eingangstur_activity
-#      - binary_sensor.entryway_camera_motion_detected
-#      - binary_sensor.entryway_camera_online
-#      - binary_sensor.entryway_camera_person_detected
-#      - binary_sensor.entryway_camera_sound_detected
-#      - binary_sensor.entryway_nest_protect_online
-#      - binary_sensor.garage_camera_motion_detected
-#      - binary_sensor.garage_camera_online
-#      - binary_sensor.garage_camera_person_detected
-#      - binary_sensor.garage_camera_sound_detected
-#      - binary_sensor.kids_room_nest_protect_online
-#      - binary_sensor.kitchen_nest_protect_online
-#      - binary_sensor.living_room_nest_protect_online
-#      - binary_sensor.upstairs_nest_protect_online
-
-- Energy_Consumer:
+Energy_Consumer:
     name: Energy & Security
     view: yes
     entities:
       - group.Energy
       - group.smoke_alarm
 
-- Nest_Cams:
-    name: Nest Cameras
-    view: no
-    entities:
-      - camera.entryway
-      - camera.backyard
-      - camera.garage
 
-- Protection_Maintenance:
-    name: Maintenance Status
-    view: no
-    entities:
-      - sensor.upstairs_nest_protect_battery_health
-      - sensor.kids_room_nest_protect_battery_health
-      - sensor.kitchen_nest_protect_battery_health
-      - sensor.living_room_nest_protect_battery_health
-      - sensor.den_nest_protect_battery_health
-      - sensor.entryway_nest_protect_battery_health
 
 
 
