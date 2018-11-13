@@ -7,25 +7,16 @@ default_view:
     - group.Functional_Switches
     - group.meine_cover
     - group.scene
-      
-pi_status:
-  view: yes 
-  name: RaspberryPi Status
-  entities:
-    - sensor.installed_version
-    - sensor.latest_release
-    - sensor.last_boot
-    - sensor.since_last_boot_templated
-    - sensor.memory_use_percent
-    - sensor.processor_use
-    - sensor.speedtest_download
-    - sensor.speedtest_upload
 
-Energy_Consumer:
-  name: Energy & Security
+Nest_Status:
   view: yes
+  icon: mdi:home
   entities:
-    - group.Energy
+    - group.Nest_Cams
+    - group.protection_maintenance
+    - group.protection_realtime
+    - group.protection_status_co2
+    - group.protection_status_smoke
     - group.smoke_alarm
       
 Graphs:
@@ -37,13 +28,10 @@ Graphs:
     - history_graph.temperature
     - history_graph.humidtiy
 
-status:
+other:
   view: yes
   name: Status
   entities:
     - group.all_automations
-    - group.protection_maintenance
-    - group.protection_realtime
-    - group.protection_status_co2
-    - group.protection_status_smoke
     - group.wellbeing
+    - group.Energy
