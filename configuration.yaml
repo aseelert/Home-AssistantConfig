@@ -339,7 +339,7 @@ homekit:  !include homekit.yaml
 device_tracker: !include device_tracker.yaml
 #weather: !include weather.yaml
 binary_sensor: !include binary_sensors.yaml
-sensor: !include sensors.yaml
+
 
 switch: !include_dir_merge_list switch/ 
 
@@ -350,6 +350,7 @@ script: !include scripts.yaml
 shell_command: !include shell_command.yaml
 alert: !include alert.yaml
 
+sensor: !include_dir_merge_list sensor/
 cover: !include_dir_merge_list cover/
 scene: !include_dir_merge_list scene/
 light: !include_dir_merge_list light/
