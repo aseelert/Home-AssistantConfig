@@ -1,0 +1,18 @@
+- platform: fritzbox_netmonitor
+    host: !secret fritz_host
+    resources:
+      - type: is_linked
+      - type: is_connected
+      - type: wan_access_type
+      - type: external_ip
+      - type: uptime
+      - type: bytes_sent
+      - type: bytes_received
+      - type: transmission_rate_up
+      - type: transmission_rate_down
+      - type: max_byte_rate_up
+      - type: max_byte_rate_down
+      - type: max_bit_rate_up
+      - type: max_bit_rate_down
+#    username: !secret fritz_username
+#    password: !secret fritz_password
