@@ -16,3 +16,4 @@ home-assistant.log
 www/custom_ui/
 *.conf
 nohup.out
+get_telegram_chatid.py
