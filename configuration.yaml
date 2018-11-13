@@ -1,5 +1,5 @@
 group: !include_dir_merge_named group/
-alert: !include_dir_merge_named alerts
+alert: !include_dir_merge_named alert/
 
 switch: !include_dir_merge_list switch/ 
 automation: !include_dir_merge_list automation/
