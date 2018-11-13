@@ -1,21 +1,21 @@
 firstfloor:
-    view: yes
-    name: First floor
-    entities:
-      - light.wohnzimmerlampe
-      - sensor.living_room_nest_protect_battery_health
-      - sensor.living_room_nest_protect_co_status
-      - sensor.living_room_nest_protect_smoke_status
-      - device_tracker.samsung
-      - switch.zw_lichterkette_switch
-      - sensor.kids_room_nest_protect_battery_health
-      - sensor.kids_room_nest_protect_smoke_status
-      - sensor.kids_room_nest_protect_co_status
-      - sensor.kids_room_nest_protect_color_status 
-      - sensor.den_nest_protect_battery_health
-      - sensor.den_nest_protect_smoke_status
-      - sensor.den_nest_protect_co_status
-      - sensor.den_nest_protect_color_status
-      - switch.brennenstuhl2
-      - switch.brennenstuhl3
-      - cover.rollo5_blinds
+  view: yes
+  name: First floor
+  entities:
+    - light.wohnzimmerlampe
+    - sensor.living_room_nest_protect_battery_health
+    - sensor.living_room_nest_protect_co_status
+    - sensor.living_room_nest_protect_smoke_status
+    - device_tracker.samsung
+    - switch.zw_lichterkette_switch
+    - sensor.kids_room_nest_protect_battery_health
+    - sensor.kids_room_nest_protect_smoke_status
+    - sensor.kids_room_nest_protect_co_status
+    - sensor.kids_room_nest_protect_color_status 
+    - sensor.den_nest_protect_battery_health
+    - sensor.den_nest_protect_smoke_status
+    - sensor.den_nest_protect_co_status
+    - sensor.den_nest_protect_color_status
+    - switch.brennenstuhl2
+    - switch.brennenstuhl3
+    - cover.rollo5_blinds
