@@ -16,6 +16,7 @@
       - download
       - upload
       - ping
+      
   - platform: template
     sensors:
       since_last_boot_templated:
@@ -45,16 +46,3 @@
     name: Latest Release
     select: ".current-version h1"
     value_template: '{{ value.split(":")[1] }}'
-
-#  - platform: synologydsm
-#    host: !secret syno_host
-#    username: !secret syno_user
-#    password: !secret syno_pass
-#    monitored_conditions:
-#      - cpu_total_load
-#      - memory_real_usage
-#      - network_up
-#      - disk_smart_status
-#      - volume_size_total
-#      - volume_size_used
-
