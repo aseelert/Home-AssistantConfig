@@ -338,18 +338,22 @@ homekit:  !include homekit.yaml
 
 device_tracker: !include device_tracker.yaml
 #weather: !include weather.yaml
-binary_sensor: !include binary_sensors.yaml
+
 
 
 switch: !include_dir_merge_list switch/ 
 
+
+#automation old: !include automations_old.yaml
+
 group: !include groups.yaml
 automation: !include automations.yaml
-automation old: !include automations_old.yaml
 script: !include scripts.yaml
 shell_command: !include shell_command.yaml
 alert: !include alert.yaml
 
+
+binary_sensor: !include_dir_merge_list binary_sensor/
 sensor: !include_dir_merge_list sensor/
 cover: !include_dir_merge_list cover/
 scene: !include_dir_merge_list scene/
