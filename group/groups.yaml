@@ -1,4 +1,5 @@
-default_view:
+
+- default_view:
    view: yes
    icon: mdi:home
    entities:
@@ -8,7 +9,7 @@ default_view:
       - group.meine_cover
       - group.scene
       
-scene:
+- scene:
     view: no
     name: Scene
     entities:
@@ -18,7 +19,7 @@ scene:
 
 #      - group.pi_status
 
-pi_status:
+- pi_status:
     view: yes 
     name: RaspberryPi Status
     entities:
@@ -32,7 +33,7 @@ pi_status:
       - sensor.speedtest_upload
 
 
-smoke_alarm:
+- smoke_alarm:
     view: no 
     name: Rauchmelder
     entities:
@@ -43,14 +44,14 @@ smoke_alarm:
       - sensor.den_nest_protect_color_status
       - sensor.upstairs_nest_protect_color_status
 
-home_devices:
+- home_devices:
     view: no
     name: Check Devices
     entities:
       - device_tracker.gerty
       - device_tracker.ianja
 
-Graphs:
+- Graphs:
     view: yes
     name: Graphs
     entities:
@@ -59,7 +60,7 @@ Graphs:
       - history_graph.temperature
       - history_graph.humidtiy
 
-Groundfloor:
+- Groundfloor:
     view: yes
     name: Groundfloor
     entities:
@@ -96,7 +97,7 @@ Groundfloor:
       - binary_sensor.kuechentuer_alex
       - cover.zw_garagentor_switch
 
-firstfloor:
+- firstfloor:
     view: yes
     name: First floor
     entities:
@@ -118,7 +119,7 @@ firstfloor:
       - switch.brennenstuhl3
       - cover.rollo5
 
-upstairs:
+- upstairs:
     view: yes
     name: Upstairs
     entities:
@@ -146,7 +147,7 @@ upstairs:
       - cover.rollo3
       - cover.rollo4
 
-status:
+- status:
     view: yes
     name: Status
     entities:
@@ -159,7 +160,7 @@ status:
 
 ######################## End View ##### Start Grouping #######
 
-meine_cover:
+- meine_cover:
     view: no
     name: Rollos
     icon: mdi:cover
@@ -170,7 +171,7 @@ meine_cover:
       - cover.rollo4_blinds
       - cover.rollo5_blinds
 
-mobile_devices:
+- mobile_devices:
     name: Status Mobile Devices
     view: no
     icon: mdi:home
@@ -189,7 +190,7 @@ mobile_devices:
       - device_tracker.ipadleonard
 
 
-hardware_devices:
+- hardware_devices:
     name: Devices
     view: no
     icon: mdi:home
@@ -231,7 +232,7 @@ hardware_devices:
       - device_tracker.nestprotectwohnzimmer
       - device_tracker.netatmopersonalweatherstation
 
-Energy:
+- Energy:
     name: House Energy Informations
     view: no
     entities:
@@ -254,7 +255,7 @@ Energy:
 
 
 
-wellbeing:
+- wellbeing:
     name: well-being
     view: no
     entities:
@@ -269,7 +270,7 @@ wellbeing:
       - sensor.zw_eingang_temperature
       - sensor.zw_kueche_temperature
 
-Haus_Status:
+- Haus_Status:
     name: Home State
     control: hidden
     view: no
@@ -292,7 +293,7 @@ Haus_Status:
       - binary_sensor.backyard_camera_person_detected
 
 
-Functional_Switches:
+- Functional_Switches:
     name: Switches
     control: hidden
     view: no
@@ -308,7 +309,7 @@ Functional_Switches:
       - script.homeassistant_service
 
 
-Protection_Status_Smoke:
+- Protection_Status_Smoke:
     name: Smoke Alarm
     view: no
     entities:
@@ -319,7 +320,7 @@ Protection_Status_Smoke:
       - sensor.den_nest_protect_smoke_status
       - sensor.entryway_nest_protect_smoke_status
 
-Protection_Status_Co2:
+- Protection_Status_Co2:
     name: Air Quality / Smoke Co2
     view: no
     entities:
@@ -356,14 +357,14 @@ Protection_Status_Co2:
 #      - binary_sensor.living_room_nest_protect_online
 #      - binary_sensor.upstairs_nest_protect_online
 
-Energy_Consumer:
+- Energy_Consumer:
     name: Energy & Security
     view: yes
     entities:
       - group.Energy
       - group.smoke_alarm
 
-Nest_Cams:
+- Nest_Cams:
     name: Nest Cameras
     view: no
     entities:
@@ -371,7 +372,7 @@ Nest_Cams:
       - camera.backyard
       - camera.garage
 
-Protection_Maintenance:
+- Protection_Maintenance:
     name: Maintenance Status
     view: no
     entities:
