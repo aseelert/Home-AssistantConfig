@@ -340,7 +340,7 @@ device_tracker: !include device_tracker.yaml
 #weather: !include weather.yaml
 binary_sensor: !include binary_sensors.yaml
 sensor: !include sensors.yaml
-light: !include lights.yaml
+
 switch: !include_dir_merge_list switch/ 
 
 group: !include groups.yaml
@@ -352,4 +352,5 @@ alert: !include alert.yaml
 
 cover: !include_dir_merge_list cover/
 scene: !include_dir_merge_list scene/
+light: !include_dir_merge_list light/
 
