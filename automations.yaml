@@ -1,0 +1,504 @@
+- id: '1515572293272'
+  alias: Sound Notify iOS Anja zu hause
+  trigger:
+  - entity_id: device_tracker.ianja
+    from: not_home
+    platform: state
+    to: home
+    for:
+      minutes: 0
+      seconds: 20
+  action:
+    data:
+      data:
+        push:
+          sound: US-EN-Morgan-Freeman-Wife-Is-Arriving.wav
+      message: 'Info: Anja ist zu Hause'
+    service: notify.ios_gerty
+- id: '1514973393272'
+  alias: Sound Notify iOS Anja Welcome
+  trigger:
+  - entity_id: device_tracker.ianja
+    from: not_home
+    platform: state
+    to: home
+    for:
+      minutes: 0
+      seconds: 20
+  action:
+    data:
+      data:
+        push:
+          sound: US-EN-Morgan-Freeman-Welcome-Home.wav
+      message: Hallo Königin des Hauses
+    service: notify.ios_ianja
+- id: '1514972293272'
+  alias: Sound Notify iOS garage opened
+  trigger:
+  - entity_id: cover.zw_garagentor_switch
+    from: closed
+    platform: state
+    to: open
+  action:
+    service: notify.ios
+    data:
+      data:
+        push:
+          sound: US-EN-Morgan-Freeman-Garage-Door-Opened.wav
+- id: '1514973293272'
+  alias: Sound Notify iOS garage closed
+  trigger:
+  - entity_id: cover.zw_garagentor_switch
+    from: open
+    platform: state
+    to: closed
+  action:
+    service: notify.ios
+    data:
+      data:
+        push:
+          sound: US-EN-Morgan-Freeman-Garage-Door-Closed.wav
+- id: '16139223293272'
+  alias: Sound Notify iOS Smoke alarm
+  trigger:
+  - entity_id: sensor.den_nest_protect_color_status
+    from: green
+    platform: state
+  - entity_id: sensor.entryway_nest_protect_color_status
+    from: green
+    platform: state
+  - entity_id: sensor.upstairs_nest_protect_color_status
+    from: green
+    platform: state
+  - entity_id: sensor.kitchen_nest_protect_color_status
+    from: green
+    platform: state
+  - entity_id: sensor.living_room_nest_protect_color_status
+    from: green
+    platform: state
+  - entity_id: sensor.kids_room_nest_protect_color_status
+    from: green
+    platform: state
+  action:
+    data:
+      data:
+        push:
+          sound: US-EN-Morgan-Freeman-Smartthings-Detected-Smoke.wav
+      message: Smoke Status is not green anymore
+    service: notify.ios
+- id: '1514973293214'
+  alias: 'Nest: Eingangstür offen und Person erkannt (Bild senden)'
+  trigger:
+  - entity_id: binary_sensor.entryway_camera_person_detected
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: binary_sensor.eingangstuer_alex
+    state: 'on'
+  - condition: state
+    entity_id: group.home_devices
+    state: not_home
+  action:
+    data:
+      data:
+        attachment:
+          content-type: jpeg
+        entity_id: camera.entryway
+        push:
+          badge: 0
+          category: camera
+          sound: US-EN-Morgan-Freeman-Front-Door-Opened.wav
+      message: 'Alarm: jemand fremdes ist im Haus'
+    service: notify.ios
+- id: '1532501225062'
+  alias: Sound Person an der Eingangstür aber niemand ist zu Hause
+  trigger:
+  - entity_id: binary_sensor.entryway_camera_person_detected
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: group.home_devices
+    state: not_home
+  action:
+  - data:
+      data:
+        push:
+          sound: US-EN-Alexa-Motion-At-Front-Door.wav
+      message: 'Info: Fremde Person an der Eingangstür'
+    service: notify.ios
+- id: FluxLed_on
+  alias: 'Wohnzimmer: FluxLed einschalten nach Sonnenuntergang + 10m'
+  trigger:
+  - event: sunset
+    offset: +00:10:00
+    platform: sun
+  condition:
+  - condition: state
+    entity_id: light.wohnzimmerlampe
+    state: 'off'
+  action:
+  - data:
+      brightness: 23
+      entity_id:
+      - light.wohnzimmerlampe
+    service: light.turn_on
+- id: FluxLed_off
+  alias: 'Wohnzimmer: aus 23Uhr'
+  trigger:
+  - at: '23:00:00'
+    platform: time
+  action:
+  - data:
+      entity_id:
+      - light.wohnzimmerlampe
+    service: light.turn_off
+- action:
+  - service: script.backup_config
+  alias: Backup
+  condition: []
+  id: '1513091397480'
+  trigger:
+  - at: '16:11'
+    platform: time
+- id: Garage_open
+  alias: 'Garage: öffnen nach ios Antwort'
+  trigger:
+  - event_data:
+      actionName: GARAGE
+    event_type: ios.notification_action_fired
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id:
+      - switch.zw_garagentor_switch
+    service: switch.turn_on
+- id: Garage_iphone_Alex
+  alias: 'Garage: iphone Nachricht an Alex'
+  trigger:
+  - entity_id: device_tracker.gerty
+    from: not_home
+    platform: state
+    to: home
+  condition:
+  - condition: state
+    entity_id: cover.zw_garagentor_switch
+    state: closed
+  action:
+  - data:
+      data:
+        push:
+          badge: 0
+          category: garage
+      message: Hej Chef, soll ich dir die Garage öffnen?
+      title: Smart Garage
+    service: notify.ios_gerty
+- id: '1515144517664'
+  alias: 'Licht: ios Nachricht an Alex, dass Licht an ist '
+  trigger:
+  - entity_id: group.home_devices
+    from: home
+    platform: state
+    to: not_home
+  condition:
+  - condition: state
+    entity_id: group.functional_switches
+    state: 'on'
+  action:
+  - data:
+      data:
+        push:
+          badge: 0
+          category: all_lights
+      message: 'Info: some lights are still on!'
+    service: notify.ios_gerty
+- action:
+  - data:
+      entity_id:
+      - switch.zw_bibliothek_switch
+      - switch.zw_kuechenschrank_switch_2
+      - switch.zw_kuechenschrank_switch
+      - switch.zw_lichterkette_switch
+      - switch.zw_cyrus1_switch
+      - light.wohnzimmerlampe
+    service: switch.turn_off
+  alias: ios - action off after response LIGHTSOFF_ALL
+  condition: []
+  id: '1515144746044'
+  trigger:
+  - event_data:
+      actionName: LIGHTSOFF_ALL
+    event_type: ios.notification_action_fired
+    platform: event
+- id: '1515145324713'
+  alias: 'Alarm: to_armed_away'
+  trigger:
+  - entity_id: group.home_devices
+    from: home
+    platform: state
+    to: not_home
+  condition: []
+  action:
+  - alias: ''
+    data:
+      entity_id:
+      - alarm_control_panel.home_alarm
+    service: alarm_control_panel.alarm_arm_away
+- id: '1515243233106'
+  alias: 'Alarm: to_armed_home (23Uhr)'
+  trigger:
+  - at: '23:00:00'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: group.home_devices
+    state: home
+  action:
+  - data:
+      entity_id:
+      - alarm_control_panel.home_alarm
+    service: alarm_control_panel.alarm_arm_home
+- id: '1515318429909'
+  alias: 'Strom: ios Nachricht Verbrauch über 600Watt'
+  trigger:
+  - above: '600'
+    entity_id: sensor.discovergy_power
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      message: Verbrauch {{ states("sensor.discovergy_power") }} Watt
+      title: Discovergy Meter
+    service: notify.ios_gerty
+- id: '1515670381255'
+  alias: 'Alarm: trigger Hausalarm when niemand zu hause'
+  trigger:
+  - entity_id: binary_sensor.eingangstuer_alex
+    platform: state
+    to: 'on'
+  - entity_id: binary_sensor.kuechentuer_alex
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: group.home_devices
+    state: not_home
+  action:
+  - data:
+      entity_id:
+      - alarm_control_panel.home_alarm
+    service: alarm_control_panel.alarm_trigger
+- id: '1515677323249'
+  alias: 'Alarm: if alarm then Telegram'
+  trigger:
+  - entity_id: alarm_control_panel.home_alarm
+    platform: state
+    to: triggered
+  condition: []
+  action:
+  - data:
+      data:
+        photo:
+          capture: Entryway
+          url: http://127.0.0.1:8123{{ states.camera.entryway.attributes.entity_picture
+            }}
+      message: someone is in the house. Check Nest Entry status!
+      title: Alarm for Telegram account
+    service: notify.telegram_aseelert
+- id: '1515752644389'
+  alias: 'Alarm: disarm'
+  trigger:
+  - entity_id: group.home_devices
+    from: not_home
+    platform: state
+    to: home
+  condition: []
+  action:
+  - data:
+      entity_id:
+      - alarm_control_panel.home_alarm
+    service: alarm_control_panel.alarm_disarm
+- id: '1516129238630'
+  alias: 'Garage: iphone Nachricht an Schnecki'
+  trigger:
+  - entity_id: device_tracker.ianja
+    from: not_home
+    platform: state
+    to: home
+  condition:
+  - condition: state
+    entity_id: switch.zw_garagentor_switch
+    state: 'off'
+  action:
+  - data:
+      data:
+        push:
+          badge: 0
+          category: garage
+      message: Hej Schnecki, darf ich dir die Garage öffnen?
+      title: Smart Garage
+    service: notify.ios_ianja
+- id: '1525201492442'
+  alias: 'Küchenlampe: aus 23Uhr'
+  trigger:
+  - at: '23:00'
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: switch.zw_cyrus1_switch
+    service: switch.turn_off
+- id: '1531200424954'
+  alias: 'Nest: Telegram bei Nest Color change'
+  trigger:
+  - entity_id: sensor.den_nest_protect_color_status
+    from: green
+    platform: state
+  - entity_id: sensor.entryway_nest_protect_color_status
+    from: green
+    platform: state
+  - entity_id: sensor.upstairs_nest_protect_color_status
+    from: green
+    platform: state
+  - entity_id: sensor.kitchen_nest_protect_color_status
+    from: green
+    platform: state
+  - entity_id: sensor.living_room_nest_protect_color_status
+    from: green
+    platform: state
+  - entity_id: sensor.kids_room_nest_protect_color_status
+    from: green
+    platform: state
+  condition: []
+  action:
+  - data:
+      message: " Küche: {{states(\"sensor.kitchen_nest_protect_color_status\") }}\
+        \ \n Technikraum: {{states(\"sensor.entryway_nest_protect_color_status\")}}\
+        \ \n Wohnzimmer: {{states(\"sensor.living_room_nest_protect_color_status\"\
+        )}} \n Kinderzimmer: {{states(\"sensor.kids_room_nest_protect_color_status\"\
+        )}} \n Arbeitszimmer: {{states(\"sensor.den_nest_protect_color_status\") }}\
+        \ \n Bibliothek: {{states(\"sensor.upstairs_nest_protect_color_status\")}}"
+      title: Rauchalarm
+    service: notify.telegram_aseelert
+- id: '1532452281984'
+  alias: Sound Notify gegangen aber Fenster/Tür/Garage ist noch offen
+  trigger:
+  - entity_id: group.home_devices
+    from: home
+    platform: state
+    to: not_home
+  condition:
+  - condition: state
+    entity_id: binary_sensor.eingangstuer_alex
+    state: 'on'
+  - condition: state
+    entity_id: binary_sensor.kuechentuer_alex
+    state: 'on'
+  - condition: state
+    entity_id: cover.zw_garagentor_switch
+    state: open
+  action:
+  - data:
+      data:
+        push:
+          sound: US-EN-Morgan-Freeman-Front-Door-Opened.wav
+      message: Das Haus ist nicht sicher, irgendwo ist noch was offen
+    service: notify.ios
+- id: '1535117791179'
+  alias: 'MotoCaddy '
+  trigger:
+  - platform: template
+    value_template: '{{ state_attr(''switch.fritzdect_200_1'', ''current_consumption'')
+      | float < 10 }}'
+  condition:
+  - condition: state
+    entity_id: switch.fritzdect_200_1
+    state: 'on'
+  action:
+  - data:
+      entity_id: switch.fritzdect_200_1
+    service: switch.turn_off
+  - data:
+      data:
+        push:
+          badge: 0
+          category: garage
+      message: Das laden wurde beendet, du kannst jetzt wieder spielen gehen.
+      title: MotoCaddy Charge
+    service: notify.ios_gerty
+- id: '1538469990158'
+  alias: Backup to github
+  trigger:
+  - at: '11:00'
+    platform: time
+  condition: []
+  action:
+  - service: script.backup_git
+- id: '1540201997364'
+  alias: Homekit Start when Z-Wave ready
+  trigger:
+  - platform: event
+    event_type: zwave.network_ready
+  - platform: event
+    event_type: zwave.network_complete
+  - platform: event
+    event_type: zwave.network_complete_some_dead
+  action:
+  - service: homekit.start
+- id: '1541332428953'
+  alias: Turn lights on for x Minutes if there is person detected
+  trigger:
+  - entity_id: binary_sensor.entryway_camera_person_detected
+    platform: state
+    to: 'on'
+  - entity_id: binary_sensor.backyard_camera_person_detected
+    platform: state
+    to: 'on'
+  - entity_id: binary_sensor.backyard_camera__person_only_activity
+    from: disabled
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: switch.zw_cyrus1_switch
+    state: 'off'
+  - after: '16:00'
+    before: 08:00
+    condition: time
+  action:
+  - data:
+      entity_id: switch.zw_cyrus1_switch
+    service: homeassistant.turn_on
+  - data:
+      entity_id: timer.kitchen
+    service: timer.start
+- id: '1541332554385'
+  alias: Kitchen Timer
+  trigger:
+  - event_data:
+      entity_id: timer.kitchen
+    event_type: timer.finished
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: switch.zw_cyrus1_switch
+    service: homeassistant.turn_off
+- id: '1541332964673'
+  alias: ios Nachricht jemand ist im garten
+  trigger:
+  - entity_id: binary_sensor.backyard_camera_person_detected
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: group.home_devices
+    state: not_home
+  action:
+  - data:
+      message: Fremde Person im Garten
+    service: notify.ios

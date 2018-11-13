@@ -1,0 +1,36 @@
+  - platform: fritzdect
+    host: !secret fritz_host
+    username: !secret fritz_username
+    password: !secret fritz_password
+    
+#  - platform: mqtt
+#    name: "Plug Adapter 1"
+#    state_topic: "domoticz/out"
+#    command_topic: "domoticz/in"
+
+    #  - platform: command_line
+    # switches:
+    #  brennenstuhl1:
+    #    command_on: 'curl "http://127.0.0.1:8080/json.htm?type=command&param=switchlight&idx=372&switchcmd=On"'
+    #    command_off: 'curl "http://127.0.0.1:8080/json.htm?type=command&param=switchlight&idx=372&switchcmd=Off"'
+    #    command_state: 'curl "http://127.0.0.1:8080/json.htm?type=devices&rid=372"'
+    #    value_template: '{{ value_json.result[0].Status == "On" }}'
+    #  brennenstuhl2:
+    #    command_on: 'curl "http://127.0.0.1:8080/json.htm?type=command&param=switchlight&idx=373&switchcmd=On"'
+    #    command_off: 'curl "http://127.0.0.1:8080/json.htm?type=command&param=switchlight&idx=373&switchcmd=Off"'
+    #    command_state: 'curl "http://127.0.0.1:8080/json.htm?type=devices&rid=373"'
+    #    value_template: '{{ value_json.result[0].Status == "On" }}'
+    #  brennenstuhl3:
+    #    command_on: 'curl "http://127.0.0.1:8080/json.htm?type=command&param=switchlight&idx=374&switchcmd=On"'
+    #    command_off: 'curl "http://127.0.0.1:8080/json.htm?type=command&param=switchlight&idx=374&switchcmd=Off"'
+    #    command_state: 'curl "http://127.0.0.1:8080/json.htm?type=devices&rid=374"'
+    #    value_template: '{{ value_json.result[0].Status == "On" }}'
+  - platform: rfxtrx
+    automatic_add: True
+    devices:
+      071002004F020000:
+        name: Lampe1
+      071002004F030000:
+        name: Lampe2
+      071002004F050000:
+        name: Lampe3

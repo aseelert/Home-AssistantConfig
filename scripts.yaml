@@ -1,0 +1,26 @@
+backup_config:
+  sequence:
+    - service: shell_command.backup_config
+
+backup_git:
+  sequence:
+    - service: shell_command.backup_git
+
+homebridge_service:
+  sequence:
+    - service: shell_command.homebridge_service
+
+homeassistant_service:
+  sequence:
+    - service: shell_command.homeassistant_service
+
+play_sound:
+    alias: Play Sound
+    sequence:
+      - service: notify.ios_gerty
+        data_template:
+          title: "Play Sound"
+          message: "Sound is playing"
+          data:
+            push:
+              sound: "{{ states.input_select.speech_sound.state }}"

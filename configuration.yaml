@@ -1,0 +1,355 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
+  unit_system: metric
+  time_zone: Europe/Berlin
+  customize: !include customize.yaml
+  customize_glob: 
+#    "*.*":
+#      custom_ui_state_card: state-card-custom-ui
+#    "*binary*_alex":
+#       templates:
+#       rgb_color: if (state === 'off') return 'green'; else return 'red';
+#       icon_color: if (state === 'off') return 'green'; else return 'red';
+#       _stateDisplay: if (state === 'off') return 'secure'; else return 'not secure';
+    "*zw_garagentor*":
+       device_class: garage
+       custom_ui_state_card: state-card-custom-ui
+#      templates:
+#      rgb_color: if (state === 'closed') return 'green'; else return 'red';
+#       icon_color: if (state === 'closed') return 'green'; else return 'red';
+#       _stateDisplay: if (state === 'closed') return 'secure'; else return 'not secure';
+    "cover.*blinds":
+       device_class: window
+       homebridge_cover_type: rollershutter
+       custom_ui_state_card: state-card-custom-ui
+#       invert_openclose_buttons: true
+#       templates:
+#       rgb_color: if (state === 'closed') return 'green'; else return 'red';
+#       icon_color: if (state === 'closed') return 'green'; else return 'red';
+#       _stateDisplay: if (state === 'closed') return 'secure'; else return 'not secure';
+    "sensor.*protect_color_status":
+       icon: mdi:smoke-detector
+       custom_ui_state_card: state-card-custom-ui
+#       templates:
+#       rgb_color: if (state === 'green') return 'green'; else return 'red';
+#       icon_color: if (state === 'green') return 'green'; else return 'red';
+#       _stateDisplay: if (state === 'green') return 'secure'; else return 'not secure';
+    "*_temperature":
+       state_card_mode: badges
+       custom_ui_state_card: state-card-custom-ui
+       templates:
+         theme: >
+           if (state > 21) return 'hot'; else if (state >= 19 ) return 'comfortable'; else return 'cold';
+    "*_humidity":
+       state_card_mode: badges
+       custom_ui_state_card: state-card-custom-ui
+       templates:
+         theme: >
+           if (state > 65) return 'hot'; else if (state >= 55 ) return 'comfortable'; else return 'cold';
+
+
+updater:
+  include_used_components: true
+customizer:
+  custom_ui: local
+frontend: !include frontend.yaml
+
+config:
+history:
+logbook:
+
+panel_iframe:
+  configurator:
+    title: Config for HASS
+    icon: mdi:wrench
+    url: http://192.168.178.227:3218
+
+logger:
+  default: info
+  #  logs:
+          #homeassistant.components.rfxtrx: debug
+
+timer:
+  kitchen:
+    duration: '00:10:00'
+
+influxdb:
+  host: !secret influxdb_host
+  port: !secret influxdb_port
+  database: !secret influxdb_database
+  username: !secret influxdb_user
+  password: !secret influxdb_pass
+#  ssl: true
+#  verify_ssl: true
+#  max_retries: 3
+  default_measurement: state
+  exclude:
+    domains:
+       - automation
+  include:
+    entities:
+       - sensor.discovergy_power
+       - sensor.discovergy_phase1
+       - sensor.discovergy_phase2
+       - sensor.discovergy_phase3
+       - sensor.discovergy_energy
+       - sensor.netatmo_station_temperature
+       - sensor.outside_temperatur 
+       - sensor.technik_temp 
+       - sensor.zw_badfenster_temperature
+       - sensor.zw_eingang_temperature
+       - sensor.zw_kueche_temperature
+       - sensor.netatmo_station_humidity
+       - sensor.outside_humidity
+  tags_attributes:
+    - friendly_name
+
+input_select:
+  speech_sound:
+    name: Speech sound selection
+    icon: mdi:text-to-speech
+    options:
+      - US-EN-Alexa-Daughter-Is-Arriving.wav
+      - US-EN-Alexa-Girlfriend-Is-Arriving.wav
+      - US-EN-Alexa-Good-Morning.wav
+      - US-EN-Alexa-Good-Night.wav
+      - US-EN-Alexa-Husband-Is-Arriving.wav
+      - US-EN-Alexa-Motion-Detected-Generic.wav
+      - US-EN-Alexa-Motion-In-Back-Yard.wav
+      - US-EN-Alexa-Motion-In-Basement.wav
+      - US-EN-Alexa-Welcome-Home.wav
+      - US-EN-Alexa-Wife-Is-Arriving.wav
+      - US-EN-Morgan-Freeman-Boss-Is-Arriving.wav
+      - US-EN-Morgan-Freeman-Daughter-Is-Arriving.wav
+      - US-EN-Morgan-Freeman-Girlfriend-Is-Arriving.wav
+      - US-EN-Morgan-Freeman-Good-Morning.wav
+      - US-EN-Morgan-Freeman-Good-Night.wav
+      - US-EN-Morgan-Freeman-Motion-In-Basement.wav
+      - US-EN-Morgan-Freeman-Motion-In-Bedroom.wav
+      - US-EN-Morgan-Freeman-Motion-In-Game-Room.wav
+      - US-EN-Morgan-Freeman-Motion-In-Garage.wav
+      - US-EN-Morgan-Freeman-Motion-In-Kitchen.wav
+      - US-EN-Morgan-Freeman-Motion-In-Living-Room.wav
+      - US-EN-Morgan-Freeman-Motion-In-Theater.wav
+      - US-EN-Morgan-Freeman-Searching-For-Car-Keys.wav
+      - US-EN-Morgan-Freeman-Setting-The-Mood.wav
+      - US-EN-Morgan-Freeman-Someone-Is-Arriving.wav
+      - US-EN-Morgan-Freeman-Starting-Movie-Mode.wav
+      - US-EN-Morgan-Freeman-Starting-Party-Mode.wav
+      - US-EN-Morgan-Freeman-Starting-Romance-Mode.wav
+      - US-EN-Morgan-Freeman-Turning-Off-All-The-Lights.wav
+      - US-EN-Morgan-Freeman-Turning-Off-The-Hallway-Lights.wav
+      - US-EN-Morgan-Freeman-Turning-Off-The-Light.wav
+      - US-EN-Morgan-Freeman-Turning-Off-The-Lights.wav
+      - US-EN-Morgan-Freeman-Turning-Off-The-Mood-Lights.wav
+      - US-EN-Morgan-Freeman-Turning-Off-The-TV.wav
+      - US-EN-Morgan-Freeman-Turning-On-The-Hallway-Lights.wav
+      - US-EN-Morgan-Freeman-Turning-On-The-Light.wav
+      - US-EN-Morgan-Freeman-Turning-On-The-Lights.wav
+      - US-EN-Morgan-Freeman-Turning-On-The-Mood-Lights.wav
+      - US-EN-Morgan-Freeman-Turning-On-The-TV.wav
+      - US-EN-Morgan-Freeman-Vacate-The-Premises.wav
+      - US-EN-Morgan-Freeman-Welcome-Home.wav
+      - US-EN-Morgan-Freeman-Wife-Is-Arriving.wav
+    initial: US-EN-Morgan-Freeman-Welcome-Home.wav
+
+
+#zone:
+#  - name: BIP
+#    latitude: 50.79363
+#    longitude: 12.898230000000012
+#    radius: 250
+#    icon: mdi:school
+
+#  - name: Envia
+#    latitude: 50.858335
+#    longitude: 12.92719599999998
+#    radius: 250
+    
+#  - name: IBM
+#    latitude: 50.8322904
+#    longitude: 12.92230189999998
+#    radius: 250
+    
+#  - name: Sonnenschein
+#    latitude: 50.82942000000001
+#    longitude: 12.913149999999973
+#    radius: 250
+
+http:
+  api_password: !secret http_password
+#  ssl_certificate: /usr/share/hassio/homeassistant/dehydrated/certs/aseelert.duckdns.org/fullchain.pem
+#  ssl_key: /usr/share/hassio/homeassistant/dehydrated/certs/aseelert.duckdns.org/privkey.pem
+#  ssl_certificate: /home/pi/.homeassistant/certificate.pem
+#  ssl_key: /home/pi/.homeassistant/privkey.pem
+  base_url: !secret duckdns
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_api
+    allowed_chat_ids:
+      - !secret telegram_chatid_1
+
+history_graph:
+  gr1:
+    name: Humidtiy
+    entities:
+      - sensor.netatmo_station_humidity
+      - sensor.outside_humidity
+    hours_to_show: 120
+    refresh: 60
+  gr2:
+    name: Temperature
+    entities:
+      - sensor.netatmo_station_temperature
+      - sensor.outside_temperatur
+      - sensor.technik_temp
+      - sensor.zw_badfenster_temperature
+      - sensor.zw_eingang_temperature
+      - sensor.zw_kueche_temperature
+    hours_to_show: 48
+    refresh: 60
+  gr3:
+    name: Alarm Level
+    entities:
+      - alarm_control_panel.home_alarm
+    hours_to_show: 24
+
+  gr4:
+    name: Energy
+    entities:
+      - sensor.discovergy_power
+      - sensor.discovergy_phase1
+      - sensor.discovergy_phase2
+      - sensor.discovergy_phase3
+    hours_to_show: 48
+    refresh: 60
+
+
+
+
+        #map:
+ios:
+  push:
+    categories:
+      - name: Arbeitszimmer Off
+        identifier: 'lights'
+        actions:
+          - identifier: 'LIGHTSOFF'
+            title: 'switch office light off'
+            activationMode: 'background'
+            authenticationRequired: no
+            destructive: yes
+            behavior: 'default'
+          - identifier: 'DISMISS'
+            title: 'Dismiss'
+            activationMode: 'background'
+            authenticationRequired: no
+            destructive: no
+            behavior: 'default'
+      - name: All Lamps Off
+        identifier: 'all_lights'
+        actions:
+          - identifier: 'LIGHTSOFF_ALL'
+            title: 'switch all lights off'
+            activationMode: 'background'
+            authenticationRequired: no
+            destructive: yes
+            behavior: 'default'
+          - identifier: 'DISMISS_ALL'
+            title: 'Dismiss'
+            activationMode: 'background'
+            authenticationRequired: no
+            destructive: no
+            behavior: 'default'
+      - name: Garage open
+        identifier: 'garage'
+        actions:
+          - identifier: 'GARAGE'
+            title: 'open garage and turn lights on'
+            activationMode: 'background'
+            authenticationRequired: no
+            destructive: yes
+            behavior: 'default'
+          - identifier: 'DISMISS_GARAGE'
+            title: 'Dismiss'
+            activationMode: 'background'
+            authenticationRequired: no
+            destructive: no
+            behavior: 'default'
+
+notify:
+  - platform: ios
+    name: ios
+    target: !secret ios_gerty_target
+  - platform: telegram
+    name: telegram_aseelert
+    chat_id: !secret telegram_chatid_1
+
+
+sun:
+recorder:
+  purge_interval: 10
+  purge_keep_days: 32
+
+#  db_url: !secret mariadb
+
+alarm_control_panel:
+  platform: manual
+  name: Home Alarm
+  pending_time: 0
+  trigger_time: 1 # Workaround to prevent being in the triggered state
+
+
+# Text to speech
+#tts:
+#  - platform: google
+#ifttt:
+#  key: d7XuOH5iYG75igqQbveQiY
+## Hardware and External Sources
+zwave:
+  usb_path: /dev/ttyACM0
+
+rfxtrx:
+  device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A1Z566UI-if00-port0
+  debug: False
+  
+netatmo:
+  api_key: !secret netatmo_api
+  secret_key: !secret netatmo_key
+  username: !secret netatmo_user
+  password: !secret netatmo_pass
+
+nest:
+  client_id: !secret nest_id
+  client_secret: !secret nest_key
+
+mqtt:
+  broker: localhost
+
+#mqtt_statestream:
+#  base_topic: homeassistant
+#  publish_attributes: true
+#  publish_timestamps: true
+
+homekit:  !include homekit.yaml
+
+device_tracker: !include device_tracker.yaml
+#weather: !include weather.yaml
+binary_sensor: !include binary_sensors.yaml
+sensor: !include sensors.yaml
+light: !include lights.yaml
+switch: !include_dir_merge_list switch/ 
+
+group: !include groups.yaml
+automation: !include automations.yaml
+automation old: !include automations_old.yaml
+script: !include scripts.yaml
+shell_command: !include shell_command.yaml
+alert: !include alert.yaml
+
+cover: !include_dir_merge_list cover/
+scene: !include_dir_merge_list scene/
+

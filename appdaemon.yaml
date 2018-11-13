@@ -1,0 +1,24 @@
+secrets: /some/path
+log:
+  accessfile: /home/pi/homeassistent_dashboard/logs/access.log
+  errorfile: /home/pi/homeassistent_dashboard/logs/error.log
+  logfile: /home/pi/homeassistent_dashboard/logs/appdaemon.log
+  log_generations: 3
+  log_size: 1024
+appdaemon:
+  logfile: STDOUT
+  errorfile: STDERR
+  threads: 10
+  time_zone: <time zone>
+  api_port: 5000
+  api_key: !secret api_key
+#  api_ssl_certificate: <path/to/root/CA/cert>
+#  api_ssl_key: <path/to/root/CA/key>
+  plugins:
+    HASS:
+      type: hass
+      ha_url: <some_url>
+      ha_key: <some key>
+      cert_path: <path/to/root/CA/cert>
+      cert_verify: True
+      namespace: default

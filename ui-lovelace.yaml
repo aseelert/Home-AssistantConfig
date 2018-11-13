@@ -1,0 +1,83 @@
+views:
+  - title: main
+    icon: mdi:home-outline
+    cards:
+    - type: glance
+      title: Lights
+      show_state: false
+      column_width: calc(100% / 3)
+      entities:
+        - entity: light.wohnzimmerlampe
+          name: Wohnzimmer
+          icon: mdi:desk-lamp
+          tap_action: toggle
+        - entity: switch.zw_bibliothek_switch
+          name: Bibliothek
+          tap_action: toggle
+        - entity: switch.zw_cyrus1_switch
+          name: Küchemlampe
+          tap_action: toggle
+        - entity: switch.zw_lichterkette_switch
+          name: Lichterkette
+          tap_action: toggle
+        - entity: switch.zw_kuechenschrank_switch
+          name: Küchenschrank
+          tap_action: toggle
+    - type: glance
+      title: Cover
+      show_state: false
+      show_name: true
+      column_width: calc(100% / 3 )
+      entities:
+        - entity: cover.rollo1_blinds
+          name: links oben
+        - entity: cover.rollo3_blinds
+          name: links unten
+        - entity: cover.rollo2_blinds
+          name: rechts oben
+        - entity: cover.rollo4_blinds
+          name: rechts unten
+        - entity: cover.rollo5_blinds
+          name: Leonard
+        - entity: cover.zw_garagentor_switch
+          name: Garage
+          tap_action: toggle
+    - type: picture-glance
+      title: Garage
+#      show_state: false
+#      show_name: true
+#      column_width: calc(100% / 3 )
+      entities:
+        - entity: cover.zw_garagentor_switch
+          name: Garage
+        - entity: binary_sensor.garage_camera_motion_detected
+          name: Bewegung
+      camera_image: camera.garage
+    - type: picture-glance
+      title: Eingang
+#      show_state: false
+#      show_name: true
+#      column_width: calc(100% / 3 )
+      entities:
+        - entity: sensor.entryway_nest_protect_battery_health
+        - entity: sensor.entryway_nest_protect_co_status
+        - entity: sensor.entryway_nest_protect_color_status
+        - entity: sensor.entryway_nest_protect_smoke_status
+        - entity: binary_sensor.entryway_camera_person_detected
+        - entity: binary_sensor.entryway_camera__eingangstur_activity
+        - entity: binary_sensor.eingangstuer_alex
+      camera_image: camera.entryway
+    - type: picture-glance
+      title: Garten
+#      show_state: false
+#      show_name: true
+#      column_width: calc(100% / 3 )
+      entities:
+        - entity: binary_sensor.backyard_camera__person_only_activity
+        - entity: binary_sensor.backyard_camera_person_detected
+        - entity: binary_sensor.backyard_camera_motion_detected
+        - entity: binary_sensor.backyard_camera_online
+        - entity: binary_sensor.kuechentuer_alex
+      camera_image: camera.backyard
+
+

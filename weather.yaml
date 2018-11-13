@@ -1,0 +1,13 @@
+  - platform: yweather
+    name: !secret wetter_name
+    woeid: !secret woeid
+    forecast: 2
+    monitored_conditions:
+     - weather
+     - weather_current
+     - temp_min
+     - temp_max
+     - wind_speed
+     - pressure
+     - humidity
+     - temperature

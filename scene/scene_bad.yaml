@@ -1,0 +1,21 @@
+  - baden_starten:
+    name: Baden gehen
+    entities:
+      cover.rollo1_blinds:  
+        state: closed
+      cover.rollo3_blinds:
+        state: closed
+      cover.rollo4_blinds: 
+        state: closed
+
+  - baden_fertig :
+    name: Baden beendet
+    entities:
+      cover.rollo1_blinds:  
+        state: open
+      cover.rollo2_blinds:
+        state: open
+      cover.rollo3_blinds:
+        state: open
+      cover.rollo4_blinds: 
+        state: open

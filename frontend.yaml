@@ -1,0 +1,16 @@
+  javascript_version: latest
+  extra_html_url:
+    - /local/custom_ui/state-card-custom-ui.html
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-custom-ui-es5.html
+  themes:
+    cold:
+      primary-text-color: '#447ebc'
+      label-badge-red: '#447ebc'
+    comfortable:
+      primary-text-color: '#629e51'
+      label-badge-red: '#629e51'
+    hot:
+      primary-text-color: '#bf1b00'
+      label-badge-red: '#bf1b00'
+

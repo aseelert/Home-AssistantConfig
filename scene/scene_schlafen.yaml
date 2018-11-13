@@ -1,0 +1,15 @@
+
+  - schlafen:     
+    name: Schlafen gehen
+    entities:
+      switch.zw_cyrus1_switch: 
+        state: off
+      light.wohnzimmerlampe:
+        state: off
+      switch.zw_kuechenschrank_switch: 
+        state: off
+      switch.zw_bibliothek_switch: 
+        state: off
+      switch.zw_lichterkette_switch:
+        state: off
+ 

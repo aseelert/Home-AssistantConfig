@@ -1,0 +1,6 @@
+cover.zw_garagentor_switch:
+  ignored: false
+  polling_intensity: 2
+switch.zw_garagentor_switch:
+  ignored: false
+  polling_intensity: 2

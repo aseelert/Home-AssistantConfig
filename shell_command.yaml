@@ -1,0 +1,5 @@
+backup_config: "sudo /home/pi/.homeassistant/backup_homeassistant.sh"
+backup_git: "/home/pi/.homeassistant/gitupdate.sh"
+homebridge_service: "sudo systemctl restart homebridge.service"
+homeassistant_service: "sudo /bin/systemctl restart homeassistant.service"
+

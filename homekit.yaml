@@ -1,0 +1,29 @@
+  auto_start: false
+  port: 51827
+  name: HA Homebridge
+  filter:
+    include_entities:
+      - cover.rollo1_blinds
+      - cover.rollo3_blinds
+      - cover.rollo2_blinds
+      - cover.rollo4_blinds
+      - cover.rollo5_blinds
+      - switch.zw_bibliothek_switch
+      - switch.zw_lichterkette_switch
+      - switch.zw_cyrus1_switch
+      - switch.zw_kuechenschrank_switch
+      - switch.fritzdect_200_1
+      - cover.zw_garagentor_switch
+      - light.wohnzimmerlampe
+      - sensor.zw_badfenster_access_control
+      - sensor.zw_badfenster_temperature
+      - sensor.netatmo_station_temperature
+      - sensor.upstairs_nest_protect_smoke_status
+      - sensor.kids_room_nest_protect_smoke_status
+      - sensor.kitchen_nest_protect_smoke_status
+      - sensor.living_room_nest_protect_smoke_status
+      - sensor.den_nest_protect_smoke_status
+      - sensor.entryway_nest_protect_smoke_status
+      - scene.baden_starten
+      - scene.baden_fertig
+      - scene.schlafen

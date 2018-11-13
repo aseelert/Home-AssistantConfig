@@ -1,0 +1,7 @@
+#  - platform: rfxtrx
+#    automatic_add: True
+  - platform: flux_led
+    devices:
+      192.168.178.218:
+        name: Wohnzimmerlampe
+

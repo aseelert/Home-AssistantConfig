@@ -1,0 +1,447 @@
+switch.zw_kuechenschrank_switch:
+  friendly_name: Küchenschrank
+  icon: mdi:spotlight
+switch.zw_bibliothek:
+  friendly_name: Lampe in Bibliothek
+  icon: mdi:lamp
+switch.zw_kuechenschrank_switch_2:
+  hidden: true
+  homebridge_hidden: true
+camera.backyard:
+  group: protection
+sensor.netatmo_station_pressure:
+  hidden: true
+sensor.netatmo_station_wifi:
+  hidden: true
+sensor.upstairs_nest_protect_battery_health:
+  icon: mdi:battery
+sensor.kids_room_nest_protect_battery_health:
+  icon: mdi:battery
+sensor.kitchen_nest_protect_battery_health:
+  icon: mdi:battery
+sensor.living_room_nest_protect_battery_health:
+  icon: mdi:battery
+sensor.den_nest_protect_battery_health:
+  icon: mdi:battery
+sensor.entryway_nest_protect_battery_health:
+  icon: mdi:battery
+sensor.upstairs_nest_protect_co_status:
+  icon: mdi:weather-fog
+sensor.upstairs_nest_protect_smoke_status:
+  icon: mdi:alarm-light
+sensor.kids_room_nest_protect_co_status:
+  icon: mdi:weather-fog
+sensor.kids_room_nest_protect_smoke_status:
+  icon: mdi:alarm-light
+sensor.kitchen_nest_protect_co_status:
+  icon: mdi:weather-fog
+sensor.kitchen_nest_protect_smoke_status:
+  icon: mdi:alarm-light
+sensor.living_room_nest_protect_co_status:
+  icon: mdi:weather-fog
+sensor.living_room_nest_protect_smoke_status:
+  icon: mdi:alarm-light
+sensor.den_nest_protect_co_status:
+  icon: mdi:weather-fog
+sensor.den_nest_protect_smoke_status:
+  icon: mdi:alarm-light
+sensor.entryway_nest_protect_co_status:
+  icon: mdi:weather-fog
+sensor.entryway_nest_protect_smoke_status:
+  icon: mdi:alarm-light
+binary_sensor.backyard_camera__garteneigenbereich_activity:
+  hidden: true
+binary_sensor.backyard_camera_motion_detected:
+  hidden: true
+binary_sensor.backyard_camera_online:
+  hidden: true
+binary_sensor.backyard_camera_person_detected:
+  icon: mdi:face
+binary_sensor.backyard_camera_sound_detected:
+  hidden: true
+binary_sensor.den_nest_protect_online:
+  hidden: true
+binary_sensor.entryway_camera__eingangstur_activity:
+  hidden: true
+binary_sensor.entryway_camera_online:
+  hidden: true
+binary_sensor.entryway_camera_sound_detected:
+  hidden: true
+binary_sensor.entryway_nest_protect_online:
+  hidden: true
+binary_sensor.garage_camera_motion_detected:
+  hidden: true
+binary_sensor.garage_camera_online:
+  hidden: true
+binary_sensor.garage_camera_person_detected:
+  hidden: true
+binary_sensor.garage_camera_sound_detected:
+  hidden: true
+binary_sensor.kids_room_nest_protect_online:
+  hidden: true
+binary_sensor.kitchen_nest_protect_online:
+  hidden: true
+binary_sensor.living_room_nest_protect_online:
+  hidden: true
+binary_sensor.upstairs_nest_protect_online:
+  hidden: true
+sensor.zw_kuechenschrank_alarm_level:
+  hidden: true
+sensor.zw_kuechenschrank_alarm_type:
+  hidden: true
+sensor.zw_kuechenschrank_exporting:
+  hidden: true
+sensor.zw_kuechenschrank_heat:
+  hidden: true
+sensor.zw_kuechenschrank_power_management:
+  hidden: true
+sensor.zw_kuechenschrank_sourcenodeid:
+  hidden: true
+switch.fritzdect_200_1:
+  friendly_name: FRITZ!DECT MotoCaddy Charger
+  icon: mdi:battery
+  temperature_unit: °C
+sensor.zw_badfenster_temperature:
+  friendly_name: Temperatur Bad
+  icon: mdi:thermometer
+  unit_of_measurement: °C
+binary_sensor.sensor:
+  friendly_name: Windows bathroom
+  icon: mdi:glassdoor
+sensor.zw_kuechenschrank_power:
+  icon: mdi:power-socket-eu
+sensor.zw_kuechenschrank_energy:
+  icon: mdi:power-socket-eu
+light.wohnzimmerlampe:
+  icon: mdi:lamp
+sensor.date__time:
+  hidden: true
+sensor.internet_time:
+  hidden: true
+sensor.technik_total_power:
+  icon: mdi:power-socket-eu
+sensor.technik_power:
+  friendly_name: Entfeuchter Power
+  icon: mdi:power-socket-eu
+sensor.technik_temp:
+  icon: mdi:thermometer
+  unit_of_measurement: °C
+sensor.badfenster_alex:
+  friendly_name: Badfenster
+  icon: mdi:glassdoor
+sensor.zw_badfenster_access_control:
+  hidden: true
+sensor.zw_badfenster_alarm_level:
+  hidden: true
+sensor.zw_badfenster_alarm_type:
+  hidden: true
+sensor.zw_badfenster_burglar:
+  hidden: true
+sensor.zw_badfenster_heat:
+  hidden: true
+sensor.zw_badfenster_power_management:
+  hidden: true
+binary_sensor.zw_badfenster_sensor:
+  hidden: true
+sensor.zw_badfenster_sourcenodeid:
+  hidden: true
+sensor.zw_bibliothek_alarm_level:
+  hidden: true
+sensor.zw_bibliothek_alarm_type:
+  hidden: true
+sensor.zw_bibliothek_exporting:
+  hidden: true
+sensor.zw_bibliothek_sourcenodeid:
+  hidden: true
+sensor.zw_bibliothek_power_management:
+  hidden: true
+sensor.zw_lichterkette_alarm_level:
+  hidden: true
+sensor.zw_lichterkette_alarm_type:
+  hidden: true
+sensor.zw_lichterkette_exporting:
+  hidden: true
+sensor.zw_lichterkette_power_management:
+  hidden: true
+sensor.zw_lichterkette_sourcenodeid:
+  hidden: true
+switch.zw_lichterkette_switch:
+  friendly_name: Lichterkette
+  icon: mdi:power-socket-eu
+switch.zw_bibliothek_switch:
+  friendly_name: Bibliothek
+  icon: mdi:power-socket-eu
+sensor.zw_bibliothek_power:
+  icon: mdi:power-socket-eu
+sensor.zw_bibliothek_power_2:
+  hidden: true
+sensor.zw_lichterkette_power:
+  icon: mdi:power-socket-eu
+sensor.zw_lichterkette_power_2:
+  hidden: true
+device_tracker.nestprotectwohnzimmer:
+  hidden: true
+  homebridge_hidden: true
+device_tracker.gerty:
+  friendly_name: Alex iPhone7
+  icon: mdi:apple
+sensor.entertain:
+  icon: mdi:television-box
+device_tracker.nestprotectarbeitszimmer:
+  hidden: true
+  homebridge_hidden: true
+script.homebridge_service:
+  friendly_name: Restart Apple HomeBridge
+  homebridge_hidden: true
+  icon: mdi:language-python
+script.backup_config:
+  friendly_name: Backup Home Assistant
+  icon: mdi:language-python
+switch.brennenstuhl2:
+  friendly_name: Arbeitszimmerlampe
+  icon: mdi:power-socket-eu
+switch.brennenstuhl3:
+  friendly_name: Weihnachtsstern
+  icon: mdi:power-socket-eu
+switch.brennenstuhl1:
+  friendly_name: Schlafzimmerlampe
+  icon: mdi:power-socket-eu
+sensor.zw_lichterkette_energy:
+  icon: mdi:power-socket-eu
+sensor.zw_bibliothek_energy:
+  icon: mdi:power-socket-eu
+binary_sensor.badfenster_alex:
+  friendly_name: Badfenster
+  icon: mdi:window-closed
+  templates:
+    rgb_color: if (state === 'off') return 'green'; else return 'red';
+    icon_color: if (state === 'off') return 'green'; else return 'red';
+    _stateDisplay: if (state === 'off') return 'secure'; else return 'not secure';
+device_tracker.nestcamflur:
+  hidden: true
+device_tracker.nestcamgarage:
+  hidden: true
+device_tracker.nestcamgarten:
+  hidden: true
+device_tracker.hflpb100zj200:
+  hidden: true
+device_tracker.netatmopersonalweatherstation:
+  hidden: true
+device_tracker.leonard:
+  hidden: true
+device_tracker.dlan1technik:
+  hidden: true
+device_tracker.dlan3arbeitszimmer:
+  hidden: true
+device_tracker.meteroit:
+  hidden: true
+device_tracker.skynet:
+  hidden: true
+device_tracker.firetv:
+  hidden: true
+device_tracker.synology:
+  hidden: true
+device_tracker.fritzmitte:
+  hidden: true
+device_tracker.fritzoben:
+  hidden: true
+device_tracker.entertain:
+  hidden: true
+device_tracker.nestprotecttechnik:
+  hidden: true
+device_tracker.nestprotectkueche:
+  hidden: true
+device_tracker.nestprotectkinderzimmer:
+  hidden: true
+device_tracker.nestprotectkamin:
+  hidden: true
+device_tracker.ihpprint:
+  hidden: true
+device_tracker.ianja:
+  icon: mdi:apple
+device_tracker.anjasmbp:
+  icon: mdi:laptop-mac
+device_tracker.alexandersmbp2:
+  icon: mdi:laptop-mac
+device_tracker.ipadleonard:
+  icon: mdi:tablet-ipad
+device_tracker.iphonevonhofsee:
+  icon: mdi:apple
+device_tracker.iphonevonkirsten:
+  icon: mdi:apple
+device_tracker.ibm820r9gp1x5:
+  icon: mdi:laptop-windows
+device_tracker.raspberrypilan:
+  icon: mdi:linux
+device_tracker.raspberrypiwifi:
+  icon: mdi:linux
+device_tracker.vuduo2:
+  icon: mdi:cast
+device_tracker.vuduo2_2:
+  icon: mdi:cast
+sensor.rts_arbeiten:
+  hidden: true
+  homebridge_hidden: true
+sensor.rts_schlafen:
+  hidden: true
+  homebridge_hidden: true
+sensor.rts_stern:
+  hidden: true
+  homebridge_hidden: true
+group.home_hardware_devices: {}
+device_tracker.alexandrsimac27:
+  icon: mdi:apple-finder
+device_tracker.envialaptop:
+  icon: mdi:windows
+group.haus_status:
+  order: 1
+group.functional_switches:
+  order: 2
+sensor.outside_humidity:
+  icon: mdi:water-percent
+device_tracker.oldiphone:
+  friendly_name: Evelin iPhone6
+  icon: mdi:apple
+binary_sensor.kuechentuer_alex:
+  friendly_name: Terrassentür
+  icon: mdi:door
+  templates:
+    rgb_color: if (state === 'off') return 'green'; else return 'red';
+    icon_color: if (state === 'off') return 'green'; else return 'red';
+    _stateDisplay: if (state === 'off') return 'secure'; else return 'not secure';
+binary_sensor.eingangstuer_alex:
+  friendly_name: Hauseingangstür
+  icon: mdi:door
+  templates:
+    rgb_color: if (state === 'off') return 'green'; else return 'red';
+    icon_color: if (state === 'off') return 'green'; else return 'red';
+    _stateDisplay: if (state === 'off') return 'secure'; else return 'not secure';
+zwave.zw_kueche: {}
+sensor.zw_kueche_access_control:
+  hidden: true
+sensor.zw_kueche_alarm_level:
+  hidden: true
+sensor.zw_kueche_alarm_type:
+  hidden: true
+sensor.zw_kueche_burglar:
+  hidden: true
+sensor.zw_kueche_heat:
+  hidden: true
+sensor.zw_kueche_power_management:
+  hidden: true
+binary_sensor.zw_kueche_sensor:
+  hidden: true
+sensor.zw_kueche_sourcenodeid:
+  hidden: true
+zwave.zw_eingang: {}
+sensor.zw_eingang_access_control:
+  hidden: true
+sensor.zw_eingang_alarm_level:
+  hidden: true
+sensor.zw_eingang_alarm_type:
+  hidden: true
+sensor.zw_eingang_burglar:
+  hidden: true
+sensor.zw_eingang_heat:
+  hidden: true
+sensor.zw_eingang_power_management:
+  hidden: true
+binary_sensor.zw_eingang_sensor:
+  hidden: true
+sensor.zw_eingang_sourcenodeid:
+  hidden: true
+cover.zw_garagentor_switch:
+  friendly_name: Garagentor
+  homebridge_cover_type: garage_door
+  templates:
+    rgb_color: if (state === 'closed') return 'green'; else return 'red';
+    icon_color: if (state === 'closed') return 'green'; else return 'red';
+    _stateDisplay: if (state === 'closed') return 'secure'; else return 'not secure';
+switch.zw_garagentor_switch:
+  friendly_name: Garagentorschalter
+  hidden: true
+  homebridge_hidden: true
+alarm_control_panel.home_alarm:
+  icon: mdi:security-home
+sensor.zw_garagentor_access_control:
+  hidden: true
+sensor.zw_garagentor_alarm_level:
+  hidden: true
+sensor.zw_garagentor_alarm_type:
+  hidden: true
+sensor.zw_garagentor_sourcenodeid:
+  hidden: true
+device_tracker.wii:
+  hidden: true
+device_tracker.siemenswt7wh59068a40e109495:
+  hidden: true
+sensor.gerty_battery_level:
+  hidden: true
+sensor.gerty_battery_state:
+  hidden: true
+sensor.ianja_battery_level:
+  hidden: true
+sensor.ianja_battery_state:
+  hidden: true
+group.all_automations:
+  hidden: false
+sensor.zw_kueche_temperature:
+  friendly_name: Temperatur Küche
+sensor.zw_eingang_temperature:
+  friendly_name: Temperatur Eingang
+switch.zw_cyrus1_switch:
+  friendly_name: Küchenlampe
+  icon: mdi:power-socket-eu
+sensor.den_nest_protect_color_status:
+  icon: mdi:smoke-detector
+cover.rollo1_blinds:
+#  friendly_name: Rollo 1
+#  homebridge_name: Rollo 1
+  templates:
+    rgb_color: if (state === 'closed') return 'green'; else return 'red';
+    icon_color: if (state === 'closed') return 'green'; else return 'red';
+    _stateDisplay: if (state === 'closed') return 'secure'; else return 'not secure';
+cover.rollo2_blinds:
+#  friendly_name: Rollo 2
+#  homebridge_name: Rollo 2
+  templates:
+    rgb_color: if (state === 'closed') return 'green'; else return 'red';
+    icon_color: if (state === 'closed') return 'green'; else return 'red';
+    _stateDisplay: if (state === 'closed') return 'secure'; else return 'not secure';
+cover.rollo3_blinds:
+#  friendly_name: Rollo 3
+#  homebridge_name: Rollo 3
+  templates:
+    rgb_color: if (state === 'closed') return 'green'; else return 'red';
+    icon_color: if (state === 'closed') return 'green'; else return 'red';
+    _stateDisplay: if (state === 'closed') return 'secure'; else return 'not secure';
+cover.rollo4_blinds:
+#  friendly_name: Rollo 4
+#  homebridge_name: Rollo 4
+  templates:
+    rgb_color: if (state === 'closed') return 'green'; else return 'red';
+    icon_color: if (state === 'closed') return 'green'; else return 'red';
+    _stateDisplay: if (state === 'closed') return 'secure'; else return 'not secure';
+cover.rollo5_blinds:
+#  friendly_name: Rollo 5
+#  homebridge_name: Rollo 5
+  templates:
+    rgb_color: if (state === 'closed') return 'green'; else return 'red';
+    icon_color: if (state === 'closed') return 'green'; else return 'red';
+    _stateDisplay: if (state === 'closed') return 'secure'; else return 'not secure';
+script.play_sound:
+  homebridge_hidden: true
+device_tracker.samsung:
+  homebridge_hidden: true
+sun.sun:
+  homebridge_hidden: true
+sensor.time__date:
+  homebridge_hidden: true
+sensor.fritz_netmonitor:
+  homebridge_hidden: true
+script.homeassistant_service:
+  friendly_name: Restart Homeassistant
+binary_sensor.entryway_camera_person_detected:
+  icon: mdi:face
+binary_sensor.backyard_camera__person_only_activity:
+  icon: mdi:owl

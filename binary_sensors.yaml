@@ -1,0 +1,29 @@
+  - platform: template
+    sensors:
+      badfenster_alex:
+        entity_id: sensor.zw_badfenster_access_control
+        device_class: opening
+        value_template: >-
+          {%- if is_state("sensor.zw_badfenster_access_control", "22") -%}
+            True
+          {%- else -%}
+            False
+          {%- endif -%}
+      kuechentuer_alex:
+        entity_id: sensor.zw_kueche_access_control
+        device_class: opening
+        value_template: >-
+          {%- if is_state("sensor.zw_kueche_access_control", "22") -%}
+            True
+          {%- else -%}
+            False
+          {%- endif -%}
+      eingangstuer_alex:
+        entity_id: sensor.zw_eingang_access_control
+        device_class: opening
+        value_template: >-
+          {%- if is_state("sensor.zw_eingang_access_control", "22") -%}
+            True
+          {%- else -%}
+            False
+          {%- endif -%}

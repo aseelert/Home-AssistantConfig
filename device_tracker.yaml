@@ -1,0 +1,6 @@
+  - platform: fritz
+    host: !secret fritz_host
+    username: !secret fritz_username
+    password: !secret fritz_password
+    consider_home: 120
+    interval_seconds: 10
