@@ -305,6 +305,15 @@ sun:
 recorder:
   purge_interval: 10
   purge_keep_days: 32
+  exclude:
+    entities:
+     - sun.sun
+    domains:
+     - device_tracker
+  include:
+    entities:
+     - device_tracker.gerty
+     - device_tracker.ianja
 
 #  db_url: !secret mariadb
 
