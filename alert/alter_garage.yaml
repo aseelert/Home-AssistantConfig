@@ -1,4 +1,4 @@
-  garage:
+  - garage:
     name: "Alert: Garage is open"
     done_message: "Garage closed"
     entity_id: cover.zw_garagentor_switch
