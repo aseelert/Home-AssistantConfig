@@ -1,0 +1,48 @@
+#  - platform: influxdb
+#    host: !secret influxdb_host
+#    port: !secret influxdb_port
+#    username: !secret influxdb_user
+#    password: !secret influxdb_pass
+#    queries:
+#      - name: Discovergy Phase 1 Max
+#        unit_of_measurement: 'W'
+#        value_template: '{{ value | round(1) }}'
+#        group_function: max
+#        where: '"entity_id" = ''discovergy_phase1'' and time > now() -8h'
+#        measurement: '"W"'
+#        field: value
+#        database: !secret influxdb_database
+
+  - platform: mqtt
+    name: "Discovergy power"
+    state_topic: "discovergy/meter_power" 
+    unit_of_measurement: "W"
+  - platform: mqtt
+    name: "Discovergy energy"
+    state_topic: "discovergy/meter_energy" 
+    unit_of_measurement: "kWh"
+  - platform: mqtt
+    name: "Discovergy Phase1"
+    state_topic: "discovergy/meter_power_phase1"
+    unit_of_measurement: "W"
+  - platform: mqtt
+    name: "Discovergy Phase2"
+    state_topic: "discovergy/meter_power_phase2"
+    unit_of_measurement: "W"
+  - platform: mqtt
+    name: "Discovergy Phase3"
+    state_topic: "discovergy/meter_power_phase3"
+    unit_of_measurement: "W"
+
+  - platform: mqtt
+    name: "Outside Temperatur"
+    unit_of_measurement: '°C'
+    state_topic: "domoticz/out/Haus/homeassistant"
+    value_template: '{{ value_json.svalue1 }}'
+  - platform: mqtt
+    name: "Outside Humidity"
+    unit_of_measurement: '%'
+    state_topic: "domoticz/out/Haus/homeassistant"
+    value_template: '{{ value_json.svalue2 }}'
+
+
