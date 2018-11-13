@@ -303,8 +303,8 @@ notify:
 
 sun:
 recorder:
-  purge_interval: 10
-  purge_keep_days: 32
+  purge_interval: 2
+  purge_keep_days: 10
   exclude:
     entities:
      - sun.sun
