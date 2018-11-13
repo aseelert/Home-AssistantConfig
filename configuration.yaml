@@ -1,9 +1,10 @@
+group: !include_dir_merge_named group/
+alert: !include_dir_merge_named alerts
+
 switch: !include_dir_merge_list switch/ 
-group: !include_dir_merge_list group/
 automation: !include_dir_merge_list automation/
 script: !include_dir_merge_list script/
 shell_command: !include_dir_merge_list shell_command/
-alert: !include_dir_merge_list alert/
 binary_sensor: !include_dir_merge_list binary_sensor/
 sensor: !include_dir_merge_list sensor/
 cover: !include_dir_merge_list cover/
