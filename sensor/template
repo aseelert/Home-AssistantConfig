@@ -1,0 +1,25 @@
+
+  - platform: time_date
+    display_options:
+      - 'date_time'
+      - 'time_date'
+      - 'beat'
+  - platform: template
+    sensors:
+      technik_temp:
+        value_template: '{{ states.switch.fritzdect_200_1.attributes.temperature }}'
+        friendly_name: 'Temperatur Technikraum'
+        unit_of_measurement: 'C'
+      technik_power:
+        value_template: '{{ states.switch.fritzdect_200_1.attributes.current_consumption }}'
+        friendly_name: 'Enfeuchter Power'
+        unit_of_measurement: 'W'
+      technik_total_power:
+        value_template: '{{ states.switch.fritzdect_200_1.attributes.total_consumption }}'
+        friendly_name: 'Enfeuchter Energy'
+        unit_of_measurement: 'kWh'
+#      rts_schlafen_status:
+#        value_template: '{{ states.sensor.rts_schlafen.result["Status"] }}'
+
+
+  
