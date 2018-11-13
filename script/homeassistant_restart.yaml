@@ -1,0 +1,3 @@
+homeassistant_service:
+  sequence:
+    - service: shell_command.homeassistant_service
