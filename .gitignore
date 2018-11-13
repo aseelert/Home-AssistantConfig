@@ -14,4 +14,4 @@ home-assistant_v2.db-wal
 home-assistant_v2.db
 home-assistant.log
 www/custom_ui/
-nest.conf
+*.conf
