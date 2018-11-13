@@ -1,0 +1,1 @@
+homeassistant_service: "sudo /bin/systemctl restart homeassistant.service"
