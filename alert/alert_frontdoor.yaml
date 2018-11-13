@@ -1,4 +1,4 @@
-  frontdoor:
+  - frontdoor:
     name: "Alert: Frontdoor is open"
     done_message: "Frontdoor closed"
     entity_id: binary_sensor.eingangstuer_alex
