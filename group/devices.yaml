@@ -1,60 +1,60 @@
 mobile_devices:
-    name: Status Mobile Devices
-    view: no
-    icon: mdi:home
-    entities:
-      - device_tracker.gerty
-      - sensor.gerty_battery_level
-      - sensor.gerty_battery_state
-      - device_tracker.anja_arbeit_phone
-      - device_tracker.ianja
-      - sensor.ianja_battery_level
-      - sensor.ianja_battery_state
-      - device_tracker.oldiphone
-      - device_tracker.iphonevonhofsee
-      - device_tracker.iphonevonhofsee_2
-      - device_tracker.iphonevonkirsten
-      - device_tracker.ipadleonard
+  name: Status Mobile Devices
+  view: no
+  icon: mdi:home
+  entities:
+    - device_tracker.gerty
+    - sensor.gerty_battery_level
+    - sensor.gerty_battery_state
+    - device_tracker.anja_arbeit_phone
+    - device_tracker.ianja
+    - sensor.ianja_battery_level
+    - sensor.ianja_battery_state
+    - device_tracker.oldiphone
+    - device_tracker.iphonevonhofsee
+    - device_tracker.iphonevonhofsee_2
+    - device_tracker.iphonevonkirsten
+    - device_tracker.ipadleonard
 
 
 hardware_devices:
-    name: Devices
-    view: no
-    icon: mdi:home
-    entities:
-      - sensor.entertain
-      - device_tracker.leonard
-      - device_tracker.dlan3arbeitszimmer
-      - device_tracker.dlan1technik
-      - device_tracker.meteroit
-      - device_tracker.homebot
-      - sensor.fritz_netmonitor
-      - device_tracker.skynet
-      - device_tracker.fritzoben
-      - device_tracker.fritzmitte
-      - device_tracker.synology
-      - device_tracker.trockner
-      - device_tracker.raspberrypiwifi
-      - device_tracker.raspberrypilan
-      - device_tracker.sonytv
-      - device_tracker.samsung
-      - device_tracker.entertain
-      - device_tracker.vuduo2
-      - device_tracker.vuduo2_2
-      - device_tracker.firetv
-      - device_tracker.ibm820r9gp1x5
-      - device_tracker.alexandersmbp2
-      - device_tracker.alexandrsimac27
-      - device_tracker.anjasmbp
-      - device_tracker.envialaptop
-      - device_tracker.ihpprint
-      - device_tracker.nestcamflur
-      - device_tracker.nestcamgarage
-      - device_tracker.nestcamgarten
-      - device_tracker.nestprotectarbeitszimmer
-      - device_tracker.nestprotectkamin
-      - device_tracker.nestprotectkinderzimmer
-      - device_tracker.nestprotectkueche
-      - device_tracker.nestprotecttechnik
-      - device_tracker.nestprotectwohnzimmer
-      - device_tracker.netatmopersonalweatherstation
+  name: Devices
+  view: no
+  icon: mdi:home
+  entities:
+    - sensor.entertain
+    - device_tracker.leonard
+    - device_tracker.dlan3arbeitszimmer
+    - device_tracker.dlan1technik
+    - device_tracker.meteroit
+    - device_tracker.homebot
+    - sensor.fritz_netmonitor
+    - device_tracker.skynet
+    - device_tracker.fritzoben
+    - device_tracker.fritzmitte
+    - device_tracker.synology
+    - device_tracker.trockner
+    - device_tracker.raspberrypiwifi
+    - device_tracker.raspberrypilan
+    - device_tracker.sonytv
+    - device_tracker.samsung
+    - device_tracker.entertain
+    - device_tracker.vuduo2
+    - device_tracker.vuduo2_2
+    - device_tracker.firetv
+    - device_tracker.ibm820r9gp1x5
+    - device_tracker.alexandersmbp2
+    - device_tracker.alexandrsimac27
+    - device_tracker.anjasmbp
+    - device_tracker.envialaptop
+    - device_tracker.ihpprint
+    - device_tracker.nestcamflur
+    - device_tracker.nestcamgarage
+    - device_tracker.nestcamgarten
+    - device_tracker.nestprotectarbeitszimmer
+    - device_tracker.nestprotectkamin
+    - device_tracker.nestprotectkinderzimmer
+    - device_tracker.nestprotectkueche
+    - device_tracker.nestprotecttechnik
+    - device_tracker.nestprotectwohnzimmer
+    - device_tracker.netatmopersonalweatherstation
