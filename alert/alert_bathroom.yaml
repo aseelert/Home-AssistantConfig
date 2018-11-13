@@ -1,4 +1,4 @@
-  bathroom:
+  - bathroom:
     name: "Alert: Bathroom is open"
     done_message: "Bathroom closed"
     entity_id: binary_sensor.badfenster_alex
