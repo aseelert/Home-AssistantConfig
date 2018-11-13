@@ -1,0 +1,27 @@
+upstairs:
+    view: yes
+    name: Upstairs
+    entities:
+      - sensor.upstairs_nest_protect_battery_health
+      - sensor.upstairs_nest_protect_smoke_status
+      - sensor.upstairs_nest_protect_co_status
+      - sensor.upstairs_nest_protect_color_status
+      - switch.zw_bibliothek_switch
+      - sensor.zw_badfenster_sensor
+      - sensor.zw_badfenster_access_control
+      - sensor.zw_badfenster_alarm_level
+      - sensor.zw_badfenster_alarm_type
+      - sensor.zw_badfenster_burglar
+      - sensor.zw_badfenster_heat
+      - sensor.zw_badfenster_power_management
+      - sensor.zw_badfenster_sourcenodeid
+      - sensor.zw_badfenster_temperature
+      - zwave.zw_badfenster
+      - binary_sensor.motion
+      - binary_sensor.tampering
+      - binary_sensor.badfenster_alex
+      - switch.brennenstuhl1
+      - cover.rollo1_blinds
+      - cover.rollo3_blinds
+      - cover.rollo2_blinds
+      - cover.rollo4_blinds
