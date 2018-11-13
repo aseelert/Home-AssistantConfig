@@ -1,0 +1,51 @@
+Protection_Status_Smoke:
+    name: Smoke Alarm
+    view: no
+    entities:
+      - sensor.upstairs_nest_protect_smoke_status
+      - sensor.kids_room_nest_protect_smoke_status
+      - sensor.kitchen_nest_protect_smoke_status
+      - sensor.living_room_nest_protect_smoke_status
+      - sensor.den_nest_protect_smoke_status
+      - sensor.entryway_nest_protect_smoke_status
+
+Protection_Status_Co2:
+    name: Air Quality / Smoke Co2
+    view: no
+    entities:
+      - sensor.upstairs_nest_protect_co_status
+      - sensor.kids_room_nest_protect_co_status
+      - sensor.kitchen_nest_protect_co_status
+      - sensor.living_room_nest_protect_co_status
+      - sensor.den_nest_protect_co_status
+      - sensor.entryway_nest_protect_co_status
+
+Nest_Cams:
+    name: Nest Cameras
+    view: no
+    entities:
+      - camera.entryway
+      - camera.backyard
+      - camera.garage
+
+Protection_Maintenance:
+    name: Maintenance Status
+    view: no
+    entities:
+      - sensor.upstairs_nest_protect_battery_health
+      - sensor.kids_room_nest_protect_battery_health
+      - sensor.kitchen_nest_protect_battery_health
+      - sensor.living_room_nest_protect_battery_health
+      - sensor.den_nest_protect_battery_health
+      - sensor.entryway_nest_protect_battery_health
+
+smoke_alarm:
+    view: no 
+    name: Rauchmelder
+    entities:
+      - sensor.entryway_nest_protect_color_status
+      - sensor.kitchen_nest_protect_color_status
+      - sensor.living_room_nest_protect_color_status
+      - sensor.kids_room_nest_protect_color_status
+      - sensor.den_nest_protect_color_status
+      - sensor.upstairs_nest_protect_color_status
