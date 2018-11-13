@@ -1,0 +1,79 @@
+
+  - platform: template
+    covers:
+      rollo5_blinds:
+        friendly_name: 'Kinderzimmer Rollo'
+        optimistic: false
+        open_cover:
+          service: cover.close_cover
+          data:
+            entity_id: cover.rollo5
+        stop_cover:
+          service: cover.stop_cover
+          data:
+            entity_id: cover.rollo5
+        close_cover:
+          service: cover.open_cover
+          data:
+            entity_id: cover.rollo5
+      rollo1_blinds:
+        friendly_name: 'Bad Rollo oben links'
+        optimistic: false
+        open_cover:
+          service: cover.close_cover
+          data:
+            entity_id: cover.rollo1
+        stop_cover:
+          service: cover.stop_cover
+          data:
+            entity_id: cover.rollo1
+        close_cover:
+          service: cover.open_cover
+          data:
+            entity_id: cover.rollo1
+      rollo3_blinds:
+        friendly_name: 'Bad Rollo unten links'
+        optimistic: false
+        open_cover:
+          service: cover.close_cover
+          data:
+            entity_id: cover.rollo3
+        stop_cover:
+          service: cover.stop_cover
+          data:
+            entity_id: cover.rollo3
+        close_cover:
+          service: cover.open_cover
+          data:
+            entity_id: cover.rollo3
+      rollo2_blinds:
+        friendly_name: 'Bad Rollo oben rechts'
+        optimistic: false
+        open_cover:
+          service: cover.close_cover
+          data:
+            entity_id: cover.rollo2
+        stop_cover:
+          service: cover.stop_cover
+          data:
+            entity_id: cover.rollo2
+        close_cover:
+          service: cover.open_cover
+          data:
+            entity_id: cover.rollo2
+      rollo4_blinds:
+        friendly_name: 'Bad Rollo unten rechts'
+        optimistic: false
+        open_cover:
+          service: cover.close_cover
+          data:
+            entity_id: cover.rollo4
+        stop_cover:
+          service: cover.stop_cover
+          data:
+            entity_id: cover.rollo4
+        close_cover:
+          service: cover.open_cover
+          data:
+            entity_id: cover.rollo4
+        
