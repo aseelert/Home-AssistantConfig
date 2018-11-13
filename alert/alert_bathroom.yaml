@@ -1,0 +1,11 @@
+  bathroom:
+    name: "Alert: Bathroom is open"
+    done_message: "Bathroom closed"
+    entity_id: binary_sensor.badfenster_alex
+    state: 'on'
+    repeat: 10
+    can_acknowledge: True
+    skip_first: False
+    notifiers:
+      - ios_gerty
+      - ios_ianja
