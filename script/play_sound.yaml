@@ -1,0 +1,10 @@
+play_sound:
+    alias: Play Sound
+    sequence:
+      - service: notify.ios_gerty
+        data_template:
+          title: "Play Sound"
+          message: "Sound is playing"
+          data:
+            push:
+              sound: "{{ states.input_select.speech_sound.state }}"
