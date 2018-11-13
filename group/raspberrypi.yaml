@@ -1,0 +1,12 @@
+pi_status:
+  view: no 
+  name: RaspberryPi Status
+  entities:
+    - sensor.installed_version
+    - sensor.latest_release
+    - sensor.last_boot
+    - sensor.since_last_boot_templated
+    - sensor.memory_use_percent
+    - sensor.processor_use
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
