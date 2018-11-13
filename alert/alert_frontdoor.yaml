@@ -1,11 +1,11 @@
-  - frontdoor:
-    name: "Alert: Frontdoor is open"
-    done_message: "Frontdoor closed"
-    entity_id: binary_sensor.eingangstuer_alex
-    state: 'on'
-    repeat: 10
-    can_acknowledge: True
-    skip_first: True 
-    notifiers:
-      - ios_gerty
-      - ios_ianja
+frontdoor:
+  name: "Alert: Frontdoor is open"
+  done_message: "Frontdoor closed"
+  entity_id: binary_sensor.eingangstuer_alex
+  state: 'on'
+  repeat: 10
+  can_acknowledge: True
+  skip_first: True 
+  notifiers:
+    - ios_gerty
+    - ios_ianja
